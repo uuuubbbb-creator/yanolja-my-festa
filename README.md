@@ -1,5 +1,7 @@
 # MY FESTA — 야놀자 '지역축제' 탭 신설 제안
 
+📌 **정식 프로젝트명**: 트래블 이노베이션 아이디어 공모전_야놀자 MY FESTA 지역축제 큐레이션 플랫폼
+
 > 2026년 트래블 이노베이션 아이디어 공모전 | 데이터 분석 2조
 
 ---
@@ -418,7 +420,7 @@ def split_budget_and_special(packages, budget_min, budget_max):
 
 ## Appendix — 프로젝트 산출물
 
-- 발표자료(PDF): `야놀자 PJ (최종).pdf`
-- 발표 대본: `야놀자_MY_FESTA_발표대본_수정 (1).docx`
-- 분석 코드: `BERTopic soft assignment 전환 + 품질 검증 (최종).ipynb`
-- 웹 서비스: `NOL/` (FastAPI 백엔드 `backend/api.py`, `finders.py`, `config.py` + 프론트엔드 `pages/`, `js/`, `css/`)
+- 발표자료(PDF): [`docs/발표자료.pdf`](./docs/발표자료.pdf)
+- 발표 대본: [`docs/발표대본.docx`](./docs/발표대본.docx)
+- 분석 코드: [`code/BERTopic_soft_assignment_전환_및_품질검증.ipynb`](./code/BERTopic_soft_assignment_전환_및_품질검증.ipynb)
+- 웹 서비스: [`NOL/`](./NOL) (FastAPI 백엔드 `backend/api.py`, `finders.py`, `config.py` + 프론트엔드 `pages/`, `js/`, `css/`)
