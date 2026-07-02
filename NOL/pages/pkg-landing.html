@@ -1,0 +1,253 @@
+<nav class="breadcrumb">
+  <a href="#" onclick="goPage('discover');return false;">홈</a>
+  <span class="sep">›</span>
+  <span class="current">올인원 패키지</span>
+</nav>
+
+<!-- 히어로 영역 -->
+<section class="pkg-landing">
+  <div class="pkg-landing-inner">
+
+    <!-- 왼쪽: 텍스트 + CTA -->
+    <div>
+      <div class="pkg-landing-eyebrow">
+        <span class="pkg-landing-eyebrow-dot"></span>
+        올인원 패키지 · FESTA
+      </div>
+      <h1 class="pkg-landing-title">
+        축제 하나로<br>
+        <span>여행 전체</span>를<br>완성하세요
+      </h1>
+      <p class="pkg-landing-desc">
+        숙소, 교통, 렌터카, 레저까지<br>
+        취향대로 골라 한 번에 예약하는 스마트 패키지
+      </p>
+      <div class="pkg-spec-row">
+        <span class="pkg-spec">🏨 숙박</span>
+        <span class="pkg-spec">🚆 교통</span>
+        <span class="pkg-spec">🚗 렌터카</span>
+        <span class="pkg-spec">🎿 레저</span>
+      </div>
+    </div>
+
+    <!-- 오른쪽: 특징 카드 4개 -->
+    <div class="pkg-landing-right">
+      <div class="pkg-feat-card">
+        <div class="pkg-feat-icon blue">🏨</div>
+        <div>
+          <div class="pkg-feat-title">숙박 — 호텔·리조트·펜션</div>
+          <div class="pkg-feat-desc">축제장 반경 15km 내 야놀자 제휴 숙소만 엄선</div>
+        </div>
+      </div>
+      <div class="pkg-feat-card">
+        <div class="pkg-feat-icon yellow">🚆</div>
+        <div>
+          <div class="pkg-feat-title">교통 — KTX·SRT·고속버스</div>
+          <div class="pkg-feat-desc">출발지 기준 최적 교통편 자동 계산</div>
+        </div>
+      </div>
+      <div class="pkg-feat-card">
+        <div class="pkg-feat-icon green">🎿</div>
+        <div>
+          <div class="pkg-feat-title">레저 — 취향 맞춤 액티비티</div>
+          <div class="pkg-feat-desc">내가 선택한 키워드와 가장 닮은 레저 TOP 5 추천</div>
+        </div>
+      </div>
+      <div class="pkg-feat-card">
+        <div class="pkg-feat-icon purple">💰</div>
+        <div>
+          <div class="pkg-feat-title">패키지 할인 + NOL 포인트</div>
+          <div class="pkg-feat-desc">개별 구매 대비 절감액 + 다음 여행 포인트 적립</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 3단계 안내 -->
+<section class="pkg-how">
+  <div class="pkg-how-inner">
+    <h2 class="pkg-how-title">이렇게 진행돼요</h2>
+    <div class="pkg-step-grid">
+      <div class="pkg-step">
+        <div class="pkg-step-num">01</div>
+        <div class="pkg-step-icon">🎪</div>
+        <h4>축제 선택</h4>
+        <p>원하는 축제와<br>날짜를 고르세요</p>
+      </div>
+      <div class="pkg-step-arrow">→</div>
+      <div class="pkg-step">
+        <div class="pkg-step-num">02</div>
+        <div class="pkg-step-icon">🧩</div>
+        <h4>패키지 구성</h4>
+        <p>숙소·교통·레저를<br>취향대로 조합</p>
+      </div>
+      <div class="pkg-step-arrow">→</div>
+      <div class="pkg-step">
+        <div class="pkg-step-num">03</div>
+        <div class="pkg-step-icon">✅</div>
+        <h4>한 번에 예약</h4>
+        <p>NOL 포인트 적립과<br>함께 한 번에 완료</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STEP 1 · 기본 정보 입력 (인라인 스크롤) ============ -->
+<section class="pkg-search-wrap">
+  <div class="stage1-step-eyebrow">
+    <span class="stage1-step-dot"></span>
+    STEP 1 · 기본 정보 입력
+  </div>
+  <div class="pkg-search-box">
+
+
+    <!-- 필수 정보 -->
+    <div class="pkg-section-label">
+      <span>필수 정보</span>
+      <span class="req-badge">REQUIRED</span>
+    </div>
+    <div class="pkg-required-row">
+      <!-- 축제 -->
+      <div class="pkg-cell" data-cell="festival" onclick="openPop('festival',this)">
+        <div class="pkg-cell-label">🎪 축제</div>
+        <div class="pkg-cell-value" id="cellFestival">
+          <span>축제를 선택해주세요</span>
+          <svg class="svg-icon icon-sm arrow" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+        </div>
+        <div class="pkg-popover" id="popFestival">
+          <div class="pkg-popover-head">어떤 축제를 떠나고 싶으세요?</div>
+          <input type="text" class="fest-search-input" id="festSearchInput" placeholder="축제명, 지역 검색 (예: 단오, 안동)">
+          <div class="fest-list" id="festList"></div>
+        </div>
+      </div>
+      <!-- 출발지 (2단계) -->
+      <div class="pkg-cell" data-cell="origin" onclick="openPop('origin',this)">
+        <div class="pkg-cell-label">📍 출발지</div>
+        <div class="pkg-cell-value" id="cellOrigin">
+          <span>출발지 선택</span>
+          <svg class="svg-icon icon-sm arrow" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+        </div>
+        <div class="pkg-popover" id="popOrigin">
+          <div class="pkg-popover-head">어디에서 출발하시나요?</div>
+          <div class="region-pop-grid" id="originGrid"></div>
+        </div>
+      </div>
+      <!-- 일정 -->
+      <div class="pkg-cell" data-cell="dates" onclick="openPop('dates',this)">
+        <div class="pkg-cell-label">📅 일정</div>
+        <div class="pkg-cell-value" id="cellDates">
+          <span>날짜 선택</span>
+          <svg class="svg-icon icon-sm arrow" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+        </div>
+        <div class="pkg-popover" id="popDates">
+          <div class="pkg-popover-head" id="calHead">날짜를 선택해주세요</div>
+          <div class="cal-wrap">
+            <div class="cal-head">
+              <button class="cal-nav" onclick="event.stopPropagation();calMove(-1)">
+                <svg class="svg-icon icon-sm" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+              <span class="cal-month" id="calMonth"></span>
+              <button class="cal-nav" onclick="event.stopPropagation();calMove(1)">
+                <svg class="svg-icon icon-sm" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+            </div>
+            <div class="cal-grid" id="calGrid"></div>
+          </div>
+          <div class="cal-info" id="calInfo">시작일을 먼저 선택하세요</div>
+        </div>
+      </div>
+      <!-- 인원 -->
+      <div class="pkg-cell has-value" data-cell="people" onclick="openPop('people',this)">
+        <div class="pkg-cell-label">👥 인원</div>
+        <div class="pkg-cell-value" id="cellPeople">
+          <span>1명</span>
+          <svg class="svg-icon icon-sm arrow" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+        </div>
+        <div class="pkg-popover" id="popPeople" style="right:0;left:auto">
+          <div class="pkg-popover-head">몇 명이 함께하시나요?</div>
+          <div class="people-pop">
+            <div class="people-row">
+              <div class="people-row-info">
+                <span class="people-row-label">인원</span>
+              </div>
+              <div class="people-counter">
+                <button class="people-btn" onclick="event.stopPropagation();ppl(-1)">−</button>
+                <span class="people-count" id="cntPeople">1</span>
+                <button class="people-btn" onclick="event.stopPropagation();ppl(1)">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 선택 옵션 -->
+    <div class="pkg-section-label">
+      <span>선택 옵션</span>
+      <span class="opt-hint">입력하시면 더 정확한 추천을 드려요</span>
+    </div>
+    <div class="pkg-optional-row">
+      <button class="pkg-chip" id="chipCompanion" onclick="toggleExpand('companion')">
+        <span class="label-text">💞 누구와 함께</span>
+        <span class="selected-value" id="chipCompanionValue" style="display:none"></span>
+        <svg class="svg-icon icon-sm arrow" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <!-- 키워드·포함항목 칩은 JS(initPkgIfNeeded)에서 동적 추가 -->
+    </div>
+
+    <!-- 인라인 펼침 -->
+    <div class="pkg-expand" id="pkgExpand">
+      <div class="pkg-expand-content" id="expandCompanion" style="display:none">
+        <div class="pkg-expand-title">💞 누구와 함께 가시나요?</div>
+        <div class="companion-grid-inline" id="companionGridDynamic"></div>
+      </div>
+    </div>
+
+    <!-- 검색 버튼 -->
+    <div class="pkg-submit-row">
+      <span class="pkg-submit-hint" id="submitHint">필수 정보를 모두 입력해주세요</span>
+      <button class="pkg-search-btn" id="pkgSearchBtn" onclick="submitPackage()" disabled>
+        <svg class="svg-icon" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M22 10H2M6 14h.01M10 14h4"/></svg>
+        예산 설정
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- 안내 카드 (4단계 흐름) -->
+<section class="pkg-info-section">
+  <div class="pkg-section-head">
+    <h2 class="pkg-section-title">FestRoute 패키지 구성 흐름</h2>
+    <p class="pkg-section-sub">정보를 입력하시면, 다음 4단계로 패키지가 자동 구성됩니다</p>
+  </div>
+  <div class="pkg-info-grid">
+    <div class="pkg-info-card">
+      <div class="pkg-info-icon">🏨</div>
+      <p class="pkg-info-step">STEP 1 · 숙박</p>
+      <p class="pkg-info-title">축제장 반경 15km 숙소</p>
+      <p class="pkg-info-desc">인원·동행에 맞는 객실 타입과 숙소 카테고리를 자동 매칭합니다. 렌터카 선택 시 주차 가능 숙소만 노출돼요.</p>
+    </div>
+    <div class="pkg-info-card">
+      <div class="pkg-info-icon">🚄</div>
+      <p class="pkg-info-step">STEP 2 · 교통</p>
+      <p class="pkg-info-title">출발지에서 축제장까지 직통편</p>
+      <p class="pkg-info-desc">KTX·SRT·고속버스·무궁화 중 최적 교통편을 자동으로 잡아드립니다. 렌터카는 인원에 맞춰 차종을 추천해요.</p>
+    </div>
+    <div class="pkg-info-card">
+      <div class="pkg-info-icon">🎢</div>
+      <p class="pkg-info-step">STEP 3 · 레저</p>
+      <p class="pkg-info-title">동선 안에서 즐길 거리</p>
+      <p class="pkg-info-desc">숙소–축제장 동선 반경 안의 레저를 키워드에 맞춰 골라드립니다.</p>
+    </div>
+    <div class="pkg-info-card">
+      <div class="pkg-info-icon">💸</div>
+      <p class="pkg-info-step">STEP 4 · 예산 가이드</p>
+      <p class="pkg-info-title">최소 예산 가이드 제공</p>
+      <p class="pkg-info-desc">숙박·교통 최소 비용을 미리 알려드려요. 예산이 부족하면 당일치기 옵션을 제안합니다.</p>
+    </div>
+  </div>
+</section>
+

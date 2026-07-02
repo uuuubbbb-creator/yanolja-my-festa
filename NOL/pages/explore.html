@@ -1,0 +1,182 @@
+<nav class="breadcrumb">
+  <a href="#" onclick="goPage('discover');return false;">홈</a>
+  <span class="sep">›</span>
+  <span class="current">맞춤 축제 찾기</span>
+</nav>
+
+<!-- 랜딩 히어로 -->
+<section class="pkg-landing">
+  <div class="pkg-landing-inner">
+
+    <!-- 왼쪽: 텍스트 -->
+    <div>
+      <div class="pkg-landing-eyebrow">
+        <span class="pkg-landing-eyebrow-dot"></span>
+        맞춤 축제 찾기 · MY FESTA
+      </div>
+      <h1 class="pkg-landing-title">
+        전국 1,873개 축제 중<br>
+        <span>나에게 맞는</span> 축제를<br>찾아보세요
+      </h1>
+      <p class="pkg-landing-desc">
+        취향·지역·분위기 3가지 방법으로<br>
+        딱 맞는 축제를 바로 발견하세요
+      </p>
+      <div class="pkg-spec-row">
+        <span class="pkg-spec">🎯 7가지 유형</span>
+        <span class="pkg-spec">📍 전국 17개 시도</span>
+        <span class="pkg-spec">✨ 취향 매칭 91%+</span>
+      </div>
+    </div>
+
+    <!-- 오른쪽: 찾기 방법 카드 3개 -->
+    <div class="pkg-landing-right">
+      <div class="pkg-feat-card">
+        <div class="pkg-feat-icon blue">🎯</div>
+        <div>
+          <div class="pkg-feat-title">취향으로 찾기</div>
+          <div class="pkg-feat-desc">좋아하는 분위기를 고르면 맞는 축제 추천</div>
+        </div>
+      </div>
+      <div class="pkg-feat-card">
+        <div class="pkg-feat-icon green">📍</div>
+        <div>
+          <div class="pkg-feat-title">지역으로 찾기</div>
+          <div class="pkg-feat-desc">가고 싶은 지역의 인기 축제 탐색</div>
+        </div>
+      </div>
+      <div class="pkg-feat-card">
+        <div class="pkg-feat-icon yellow">🎭</div>
+        <div>
+          <div class="pkg-feat-title">분위기로 찾기</div>
+          <div class="pkg-feat-desc">조용히 vs 다채롭게, 원하는 분위기로 선택</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 골라보기 섹션 앵커 -->
+<div id="exploreAnchor" style="height:1px;"></div>
+
+<!-- 골라보기 섹션 -->
+<div class="shell-card" id="exploreSection">
+<div class="section-block explore-card">
+  <div class="section-head">
+    <div>
+      <h2 class="section-title"><span class="icon">✨</span>맞춤 추천 탐색</h2>
+      <p class="section-sub">원하는 방식으로 찾아보세요</p>
+    </div>
+  </div>
+
+  <!-- ① 3장 진입 모드 카드 -->
+  <div class="find-mode-grid">
+    <div class="find-mode-card active" id="fmc-taste" onclick="selectFindMode('taste')">
+      <div class="find-mode-icon">🎯</div>
+      <div class="find-mode-title">취향으로 찾기</div>
+      <div class="find-mode-desc">좋아하는 분위기를 고르면<br>맞는 축제 추천</div>
+    </div>
+    <div class="find-mode-card" id="fmc-region" onclick="selectFindMode('region')">
+      <div class="find-mode-icon">📍</div>
+      <div class="find-mode-title">지역으로 찾기</div>
+      <div class="find-mode-desc">가고 싶은 지역의<br>인기 축제 탐색</div>
+    </div>
+    <div class="find-mode-card" id="fmc-style" onclick="selectFindMode('style')">
+      <div class="find-mode-icon">🎭</div>
+      <div class="find-mode-title">분위기로 찾기</div>
+      <div class="find-mode-desc">조용히 vs 다채롭게,<br>원하는 분위기로 선택</div>
+    </div>
+  </div>
+
+  <!-- ② 취향 패널 -->
+  <div id="findPanelTaste">
+    <!-- 유형 진단 결과 있을 때 -->
+    <div id="tasteHasResult" style="display:none;">
+      <div class="taste-result-banner">
+        <div>
+          <p style="font-size:11px;font-weight:700;color:var(--blue);margin-bottom:3px;">유형 진단 결과 반영 중</p>
+          <p style="font-size:14px;font-weight:900;color:var(--dark);" id="tasteResultTypeName"></p>
+        </div>
+        <button onclick="clearQuizResult()" style="font-size:11px;color:var(--gray-500);border:1px solid var(--gray-200);background:#fff;padding:5px 11px;border-radius:8px;cursor:pointer;font-family:inherit;font-weight:600;flex-shrink:0;">초기화</button>
+      </div>
+      <div class="status-grid" id="tasteResultCards" style="margin-bottom:14px;"></div>
+      <button onclick="showAllThemesInTaste()" style="font-size:12px;color:var(--blue);background:none;border:none;cursor:pointer;font-weight:700;font-family:inherit;padding:0;margin-bottom:20px;display:block;">+ 테마 직접 선택하기</button>
+    </div>
+    <!-- 테마 그리드 -->
+    <div id="tasteThemeMode">
+      <p class="explore-sub-desc" style="margin-bottom:14px;">7가지 취향 중 나와 가장 가까운 것을 선택하세요</p>
+      <div class="theme-grid" id="exploreThemePanel">
+        <a class="theme-card t2" data-topic="M1_자연계절"><div class="theme-emoji">🌿</div><div class="theme-name">자연·계절</div><div class="theme-keywords"><span>#봄꽃</span><span>#단풍</span><span>#야경</span><span>#설경</span></div><div class="theme-count" id="cntT1">0개 축제</div></a>
+        <a class="theme-card t1" data-topic="M2_역사문화"><div class="theme-emoji">🏯</div><div class="theme-name">역사·문화</div><div class="theme-keywords"><span>#야행</span><span>#유적지</span><span>#전통</span><span>#문화재</span></div><div class="theme-count" id="cntT2">0개 축제</div></a>
+        <a class="theme-card t3" data-topic="M3_먹거리특산물"><div class="theme-emoji">🍜</div><div class="theme-name">먹거리·특산물</div><div class="theme-keywords"><span>#한우</span><span>#수산물</span><span>#야시장</span><span>#특산물</span></div><div class="theme-count" id="cntT3">0개 축제</div></a>
+        <a class="theme-card t5" data-topic="M4_예술공연창작"><div class="theme-emoji">🎭</div><div class="theme-name">예술·공연</div><div class="theme-keywords"><span>#공연</span><span>#음악</span><span>#야외무대</span><span>#경연</span></div><div class="theme-count" id="cntT4">0개 축제</div></a>
+        <a class="theme-card t4" data-topic="M5_가족체험"><div class="theme-emoji">👨‍👩‍👧</div><div class="theme-name">가족·체험</div><div class="theme-keywords"><span>#어린이</span><span>#체험부스</span><span>#교육</span><span>#가족여행</span></div><div class="theme-count" id="cntT5">0개 축제</div></a>
+        <a class="theme-card t6" data-topic="M6_청년마켓"><div class="theme-emoji">🎪</div><div class="theme-name">청년·마켓</div><div class="theme-keywords"><span>#플리마켓</span><span>#청년</span><span>#도시</span><span>#핸드메이드</span></div><div class="theme-count" id="cntT6">0개 축제</div></a>
+        <a class="theme-card t7" data-topic="M7_과학레저"><div class="theme-emoji">🏄</div><div class="theme-name">레저·스포츠</div><div class="theme-keywords"><span>#서핑</span><span>#MTB</span><span>#해양</span><span>#스포츠</span></div><div class="theme-count" id="cntT7">0개 축제</div></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ③ 지역 패널 (2단계 퍼널) -->
+  <div id="findPanelRegion" style="display:none;">
+    <p class="funnel-step-label">STEP 1 · 지역 선택</p>
+    <div class="region-filter" id="regionFilter"></div>
+    <div class="funnel-step2" id="regionStep2" style="display:none;">
+      <p class="funnel-step-label">STEP 2 · 테마 좁히기 <span style="font-weight:500;text-transform:none;color:var(--gray-400);font-size:10px;letter-spacing:0;">(선택사항)</span></p>
+      <div style="display:flex;gap:7px;flex-wrap:wrap;margin-bottom:8px;" id="regionSubTheme"></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;margin-top:12px;">
+      <span class="explore-sort-label">정렬</span>
+      <select id="sortSelect" class="explore-sort-select">
+        <option value="popular">인기순</option>
+        <option value="dday">시작일 임박순</option>
+        <option value="rating">평점순</option>
+        <option value="recent">최신 등록순</option>
+      </select>
+    </div>
+    <p class="explore-sub-desc" id="gridSub" style="margin-top:8px;"></p>
+  </div>
+
+  <!-- ④ 스타일 패널 -->
+  <div id="findPanelStyle" style="display:none;">
+    <div class="style-select-grid">
+      <div class="style-select-card" id="ssc-focused" onclick="selectStyleCard('focused')">
+        <div class="style-select-icon">🎯</div>
+        <div class="style-select-body">
+          <div class="style-select-name">테마가 뚜렷한 축제</div>
+          <div class="style-select-desc">한 가지 주제에 집중 — 그 축제만의 특색이 강해요</div>
+          <div class="style-select-ex">예) 진주 남강유등축제 · 강릉 단오제</div>
+        </div>
+        <span class="style-select-arrow">›</span>
+      </div>
+      <div class="style-select-card" id="ssc-balanced" onclick="selectStyleCard('balanced')">
+        <div class="style-select-icon">⚖️</div>
+        <div class="style-select-body">
+          <div class="style-select-name">메인 + 다양한 즐길거리</div>
+          <div class="style-select-desc">주된 테마도 있고, 주변에서 즐길 것도 많아요</div>
+          <div class="style-select-ex">예) 안동 탈춤축제 · 화천 산천어축제</div>
+        </div>
+        <span class="style-select-arrow">›</span>
+      </div>
+      <div class="style-select-card" id="ssc-diverse" onclick="selectStyleCard('diverse')">
+        <div class="style-select-icon">🌈</div>
+        <div class="style-select-body">
+          <div class="style-select-name">뭐든 다 있는 복합 축제</div>
+          <div class="style-select-desc">먹거리·공연·체험까지, 누구와 가도 즐거운 축제</div>
+          <div class="style-select-ex">예) 보령 머드축제 · 자라섬 재즈페스티벌</div>
+        </div>
+        <span class="style-select-arrow">›</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 공용 카드 그리드 -->
+  <div id="exploreStatusSection" style="display:none;">
+    <div style="height:1px;background:var(--gray-100);margin-bottom:20px;"></div>
+    <div class="status-grid" id="cardGrid"></div>
+    <div class="status-pagination" id="pagination"></div>
+  </div>
+
+</div><!-- /explore-card -->
+</div><!-- /explore-shell -->

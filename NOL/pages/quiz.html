@@ -1,0 +1,97 @@
+<nav class="breadcrumb">
+  <a href="#" onclick="goPage('discover');return false;">홈</a>
+  <span class="sep">›</span>
+  <span>MY FESTA</span>
+  <span class="sep">›</span>
+  <a href="#" onclick="goPage('survey');return false;">나와 닮은 축제 찾기</a>
+  <span class="sep">›</span>
+  <span class="current">유형 진단</span>
+</nav>
+
+<div class="qz-wrap">
+
+  <!-- Topbar -->
+  <div class="qz-topbar">
+    <button class="qz-back-btn" onclick="goPage('survey')">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+      돌아가기
+    </button>
+    <div class="qz-progress-wrap">
+      <div class="qz-progress-label">
+        <span id="qzProgressLabel">여정 시작 전</span>
+        <span id="qzProgressPct"></span>
+      </div>
+      <div class="qz-progress-track">
+        <div class="qz-progress-fill" id="qzProgressFill" style="width:0%"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTRO: VIP Invitation -->
+  <div id="qzIntro" class="qz-intro">
+    <div class="qz-envelope">
+      <div class="qz-envelope-flap">
+        <div class="qz-envelope-logo">NOL FestRoute</div>
+        <div class="qz-envelope-tag">VIP INVITATION</div>
+      </div>
+      <div class="qz-invite-card">
+        <div class="qz-stamp">
+          <div class="qz-stamp-text">LUCKY<br>WINNER</div>
+          <div class="qz-stamp-big">당첨</div>
+        </div>
+        <div class="qz-invite-eyebrow">🎫 MY FESTA · 축제 유형 진단</div>
+        <p style="font-size:12px;color:var(--gray-500);font-weight:600;margin-bottom:8px;letter-spacing:-.1px;">"전국 1,873개 축제 중 나만의 축제를 찾는 여정"</p>
+        <h1 class="qz-invite-title">눈 떠보니<br><em>전국 축제 평생 VIP</em><br>당첨됐다!</h1>
+        <hr class="qz-invite-divider">
+        <div class="qz-story-label">📜 당첨자 안내 서신</div>
+        <p class="qz-story-text">
+          평범하게 방구석에서 이불을 덮고 귤을 까먹던 당신, 난생처음 장난삼아 응모한 이벤트에 당첨되어 <strong>전국 로컬 축제를 평생 무료로 즐길 수 있는 초특급 축제 VIP 패스</strong>를 얻게 되었습니다!<br><br>
+          하지만 전국의 매력 넘치는 축제들을 모두 프로답게 섭렵하기 전까진 절대로 내 방 침대로 돌아갈 수 없다는 황당한 독소 조항이 숨어있는데... 이 세계 사람들은 축제 흥에 너무 취한 나머지 하나같이 나사가 빠져 있습니다.<br><br>
+          마음을 단단히 먹고 <strong>가장 본능적으로 끌리는 황당한 선택</strong>을 내려보세요!
+        </p>
+        <hr class="qz-invite-divider2">
+        <div class="qz-spec-row">
+          <span class="qz-spec">⏱ 약 2분</span>
+          <span class="qz-spec">📋 7가지 질문</span>
+          <span class="qz-spec">🎪 10가지 유형</span>
+        </div>
+        <div class="qz-invite-footer">
+          <div class="qz-seal">
+            <div class="qz-seal-inner">🎪</div>
+            <div class="qz-seal-text">NOL PASS</div>
+          </div>
+          <button type="button" class="qz-start-btn" id="qzStartBtn" onclick="startQuiz()">
+            VIP 여정 시작하기
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUESTION SCREEN -->
+  <div id="qzQuestion" class="qz-question-screen">
+    <div class="qz-q-num" id="qzQNum">QUESTION 1 / 7</div>
+    <div class="qz-q-text" id="qzQText"></div>
+    <div class="qz-options" id="qzOptions"></div>
+    <div id="qzTopicHint" style="min-height:28px;margin-top:14px;text-align:center;transition:opacity .3s;opacity:0;">
+      <span id="qzTopicHintText" style="display:inline-flex;align-items:center;gap:6px;background:var(--blue-50);color:var(--blue);font-size:12px;font-weight:700;padding:5px 14px;border-radius:100px;"></span>
+    </div>
+  </div>
+
+  <!-- LOADING SCREEN -->
+  <div id="qzLoading" class="qz-loading">
+    <div class="qz-loading-ticket">
+      <span class="qz-loading-icon">🎫</span>
+      <div class="qz-loading-title">위원회 심사 중...</div>
+      <div class="qz-loading-sub">축제 마스터 선발 위원회가 검토하고 있어요</div>
+      <div class="qz-loading-steps">
+        <div class="qz-loading-step" id="ls0"><span class="qz-loading-step-dot"></span>응답 봉인 및 수집 완료</div>
+        <div class="qz-loading-step" id="ls1"><span class="qz-loading-step-dot"></span>취향 분석 중</div>
+        <div class="qz-loading-step" id="ls2"><span class="qz-loading-step-dot"></span>전국 축제와 매칭 중</div>
+        <div class="qz-loading-step" id="ls3"><span class="qz-loading-step-dot"></span>VIP 유형 확정 중</div>
+      </div>
+    </div>
+  </div>
+
+</div>

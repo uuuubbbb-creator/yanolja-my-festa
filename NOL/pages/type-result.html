@@ -1,0 +1,66 @@
+<div class="tr-nav">
+  <button class="tr-back" onclick="goPage('survey')">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+    돌아가기
+  </button>
+  <span class="tr-breadcrumb">
+    <span style="cursor:pointer;opacity:.55;" onclick="goPage('discover')">홈</span>
+    &nbsp;›&nbsp;
+    <span style="cursor:pointer;opacity:.55;" onclick="goPage('discover')">MY FESTA</span>
+    &nbsp;›&nbsp;
+    <span style="cursor:pointer;opacity:.7;" onclick="goPage('survey')">나와 닮은 축제 찾기</span>
+    &nbsp;›&nbsp;
+    <span>유형 결과</span>
+  </span>
+</div>
+
+<!-- 캐릭터 이미지 -->
+<div style="max-width:960px;margin:0 auto;padding:0 24px 32px;display:grid;grid-template-columns:340px 1fr;gap:48px;align-items:start;">
+  <div style="text-align:center;">
+    <img id="trCharImg" src="" alt="" style="width:100%;border-radius:20px;object-fit:cover;aspect-ratio:3/4;background:#f1f5f9;">
+  </div>
+  <div>
+    <!-- 콤보 뱃지 -->
+    <div class="tr-combo-badge" style="margin-bottom:12px;">
+      <span class="combo-dot"></span>
+      <span id="trComboBadge">스타력 × 유교력</span>
+    </div>
+    <!-- 유형명 -->
+    <div class="tr-type-name" id="trTypeName" style="margin-bottom:8px;">조선디제이</div>
+    <!-- 태그라인 -->
+    <div class="tr-type-sub" id="trTypeTagline" style="margin-bottom:28px;font-size:14px;opacity:.7;line-height:1.6;">"흠을 선율에 담아 조선의 밤을 깨운다"</div>
+    <!-- 게이지 차트 -->
+    <div class="tr-gauge-grid" id="trGaugeGrid"></div>
+  </div>
+</div>
+
+<!-- 나에게 꼭 맞는 축제 -->
+<div style="max-width:960px;margin:0 auto;padding:0 24px 32px;">
+  <p style="font-size:11px;font-weight:700;color:#94a3b8;letter-spacing:.8px;margin-bottom:14px;">나에게 꼭 맞는 축제!</p>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;" id="trFestCards"></div>
+</div>
+
+<!-- 이 유형에게 어울리는 스타일 -->
+<div id="trStyleMatch" style="max-width:960px;margin:0 auto;padding:0 24px 40px;">
+  <div style="margin-bottom:16px;">
+    <p style="font-size:11px;font-weight:700;color:#94a3b8;letter-spacing:.8px;text-transform:uppercase;margin-bottom:6px;">이 유형에게 어울리는 축제 스타일</p>
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+      <span id="trStyleLabel" style="background:#eef2ff;color:#4f46e5;font-size:13px;font-weight:800;padding:6px 16px;border-radius:100px;"></span>
+      <span id="trStyleDesc" style="font-size:12px;color:#64748b;font-weight:500;"></span>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;" id="trStyleCards"></div>
+</div>
+
+<!-- 버튼 -->
+<div class="tr-btns">
+  <button class="tr-btn-share" onclick="alert('공유 기능 연동 예정입니다!')">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+    친구에게 공유하기
+  </button>
+  <button class="tr-btn-fest" onclick="goPage('pkg-landing')">
+    🎒 올인원 패키지 보러가기
+    <svg class="svg-icon icon-sm" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+  </button>
+  <button class="tr-btn-retry" onclick="goPage('quiz')">다시하기</button>
+</div>
